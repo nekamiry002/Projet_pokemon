@@ -23,18 +23,10 @@ app.get('/random', function (req, res) {
     res.send(randomPokemon)
 })
 
-app.get('/', function (req, res) {
-    // Do something with the data
-    res.send('en gros, tu peux chercher des pokemons selon des caracteristiques dans l\'url')
-})
-
-
 app.get('/aleatoire', async function (req, res) {
     const connectedDb = await initDatabase();
     const pokemons = await connectedDb.collection("Pokemon");
-
     // console.log(pokemons)
-
     const data = await pokemons.find({}).toArray();
     // console.log(data)
 
@@ -43,6 +35,12 @@ app.get('/aleatoire', async function (req, res) {
     let randomPokemon = data[randomInt]
 
     res.send(randomPokemon)
+})
+
+
+app.get('/', function (req, res) {
+    // Do something with the data
+    res.send('en gros, tu peux chercher des pokemons selon des caracteristiques dans l\'url')
 })
 
  
