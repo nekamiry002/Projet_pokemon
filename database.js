@@ -10,7 +10,7 @@
 // import { MongoClient, Db } from "mongodb";
 const { MongoClient } = require('mongodb');
 
-let databaseUrl = 'mongodb+srv://Nekamiry02:SUriZGP4m4WWWeso@projetpkmn.rtpwixk.mongodb.net/Projet_pokemon';
+let databaseUrl = 'URL_MONGODB';
 
 let cachedDb = null;
 let promise = null;
