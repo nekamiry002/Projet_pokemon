@@ -150,7 +150,7 @@ app.get('/random/tier/:tier', function (req, res) {
 
 
 
-initDatabase();
+// initDatabase();
 
 
 
