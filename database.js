@@ -37,6 +37,14 @@ const initDatabase = async () => {
   cachedDb = db;
   return cachedDb;
 
+};
+
+
+// export default initDatabase;
+module.exports = initDatabase;
+
+
+
   // return client
   //   .connect()
   //   .then((client) => {
@@ -50,8 +58,3 @@ const initDatabase = async () => {
   //     console.log("Error connecting to database");
   //     console.log(err);
   //   });
-};
-
-
-// export default initDatabase;
-module.exports = initDatabase;

@@ -28,6 +28,20 @@ app.get('/', function (req, res) {
     res.send('en gros, tu peux chercher des pokemons selon des caracteristiques dans l\'url')
 })
 
+
+app.get('/aleatoire', function (req, res) {
+    const connectedDb = initDatabase(); // Supposons que vous avez une fonction initDatabase() qui renvoie la connexion à la base de données
+    const collection = connectedDb.collection('Pokemon');
+
+    const data = collection.find();
+
+    let randomInt = Math.floor(Math.random() * data.length)
+
+    let randomPokemon = fileData[randomInt]
+
+    res.send(randomPokemon)
+})
+
  
 
 app.get('/liste/types', function (req, res) {
@@ -55,26 +69,6 @@ app.get('/liste/types', function (req, res) {
     res.send(listeTypes)
 })
 
-/*app.get('/random/2/:type', async function (req, res) {
-    let type = req.params.type
-    const data = await fs.readFile(path)
-    
-    //axios.get("http://localhost:3000/liste/types")
-    
-    //.then((data) => {
-    // Do something with the data
-    let fileData = JSON.parse(data).filter((pokemon) => pokemon["Types"].toLowerCase().includes(type.toLowerCase()))
-    
-    let randomInt = Math.floor(Math.random() * fileData.length)
-
-    let randomPokemon = fileData[randomInt]
-
-    res.send(randomPokemon)
-    //})
-    //.catch((error) => {
-      // Do something if error 
-    //});
-})*/
 
 
 app.get('/random/:type', function (req, res) {
