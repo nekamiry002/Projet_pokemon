@@ -29,15 +29,18 @@ app.get('/', function (req, res) {
 })
 
 
-app.get('/aleatoire', function (req, res) {
-    const connectedDb = initDatabase(); // Supposons que vous avez une fonction initDatabase() qui renvoie la connexion à la base de données
-    const collection = connectedDb.collection('Pokemon');
+app.get('/aleatoire', async function (req, res) {
+    const connectedDb = await initDatabase();
+    const pokemons = await connectedDb.collection("Pokemon");
 
-    const data = collection.find();
+    console.log(pokemons)
+
+    const data = await pokemons.find({}).toArray();
+    console.log(data)
 
     let randomInt = Math.floor(Math.random() * data.length)
 
-    let randomPokemon = fileData[randomInt]
+    let randomPokemon = data[randomInt]
 
     res.send(randomPokemon)
 })
