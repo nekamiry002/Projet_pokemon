@@ -6,9 +6,6 @@ const { type } = require('os');
 const cors = require('cors');
 // import initDatabase from './database.js';
 const initDatabase = require('../database');
-require('dotenv').config();
-
-
 
 const app = express()
 

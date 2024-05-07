@@ -9,8 +9,9 @@
 
 // import { MongoClient, Db } from "mongodb";
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
-let databaseUrl = 'URL_MONGODB';
+let databaseUrl = process.env.URL_MONGODB;
 
 let cachedDb = null;
 let promise = null;
