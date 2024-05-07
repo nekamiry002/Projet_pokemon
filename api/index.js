@@ -33,10 +33,10 @@ app.get('/aleatoire', async function (req, res) {
     const connectedDb = await initDatabase();
     const pokemons = await connectedDb.collection("Pokemon");
 
-    console.log(pokemons)
+    // console.log(pokemons)
 
     const data = await pokemons.find({}).toArray();
-    console.log(data)
+    // console.log(data)
 
     let randomInt = Math.floor(Math.random() * data.length)
 
