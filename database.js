@@ -42,19 +42,3 @@ const initDatabase = async () => {
 
 // export default initDatabase;
 module.exports = initDatabase;
-
-
-
-  // return client
-  //   .connect()
-  //   .then((client) => {
-  //     let db = client.db();
-  //     console.log("Caching DB here");
-
-  //     cachedDb = db;
-  //     return cachedDb;
-  //   })
-  //   .catch((err) => {
-  //     console.log("Error connecting to database");
-  //     console.log(err);
-  //   });
