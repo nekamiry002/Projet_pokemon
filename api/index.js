@@ -6,7 +6,7 @@ const { type } = require('os');
 const cors = require('cors');
 // import initDatabase from './database.js';
 const initDatabase = require('../database');
-// const {getPokemonById, getRandomPokemon} = require('../controler/Pokemon/get');
+const {getPokemonById, getRandomPokemon} = require('../controler/Pokemon/get');
 
 const app = express()
 
