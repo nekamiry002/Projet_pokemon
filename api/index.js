@@ -23,17 +23,22 @@ app.get('/random', function (req, res) {
     res.send(randomPokemon)
 })
 
+
+
+// const getPokemonById = require('../controler/Pokemon/get');
+const getRandomPokemon = require('../controler/Pokemon/get');
 app.get('/aleatoire', async function (req, res) {
-    const connectedDb = await initDatabase();
-    const data = await connectedDb.collection("Pokemon").find({}).toArray();
-    console.log({data})
-    // const data = await pokemons;
-    // // console.log(data)
+    // const connectedDb = await initDatabase();
+    // const data = await connectedDb.collection("Pokemon").find({}).toArray();
+    // console.log({data})
+    // // const data = await pokemons;
+    // // // console.log(data)
 
-    let randomInt = Math.floor(Math.random() * data.length)
+    // let randomInt = Math.floor(Math.random() * data.length)
 
-    let randomPokemon = data[randomInt]
+    // let randomPokemon = data[randomInt]
 
+    let randomPokemon = getRandomPokemon();
     res.send(randomPokemon)
 })
 

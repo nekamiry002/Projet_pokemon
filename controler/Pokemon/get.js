@@ -19,7 +19,7 @@ async function getPokemonById( id ){
     return data
 }
 
-async function getRandomPokemonById(){
+async function getRandomPokemon(){
     const connectedDb = await initDatabase();
     const data = await connectedDb.collection("Pokemon").find({}).toArray();
     let randomInt = Math.floor(Math.random() * data.length)
@@ -28,4 +28,4 @@ async function getRandomPokemonById(){
 }
 
 module.exports = getPokemonById;
-module.exports = getRandomPokemonById;
+module.exports = getRandomPokemon;
