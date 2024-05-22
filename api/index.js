@@ -38,7 +38,7 @@ app.get('/aleatoire', async function (req, res) {
 
     // let randomPokemon = data[randomInt]
 
-    let randomPokemon = getRandomPokemon();
+    let randomPokemon = await getRandomPokemon();
     res.send(randomPokemon)
 })
 
