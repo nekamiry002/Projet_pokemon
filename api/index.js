@@ -6,6 +6,7 @@ const { type } = require('os');
 const cors = require('cors');
 // import initDatabase from './database.js';
 const initDatabase = require('../database');
+const {getPokemonById, getRandomPokemon} = require('../controler/Pokemon/get');
 
 const app = express()
 
@@ -25,8 +26,6 @@ app.get('/random', function (req, res) {
 
 
 
-// const getPokemonById = require('../controler/Pokemon/get');
-const getRandomPokemon = require('../controler/Pokemon/get');
 app.get('/aleatoire', async function (req, res) {
     // const connectedDb = await initDatabase();
     // const data = await connectedDb.collection("Pokemon").find({}).toArray();

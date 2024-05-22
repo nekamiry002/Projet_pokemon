@@ -27,5 +27,4 @@ async function getRandomPokemon(){
     return randomPokemon
 }
 
-module.exports = getPokemonById;
-module.exports = getRandomPokemon;
+module.exports = {getPokemonById, getRandomPokemon};
