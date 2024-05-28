@@ -33,6 +33,7 @@ app.get('/aleatoire', async function (req, res) {
 })
 
 app.get('/attackById/:id', async function (req, res) {
+    let id = req.params.id
     let Capacite = await getCapaciteById(id);
     res.send(Capacite)
 })
