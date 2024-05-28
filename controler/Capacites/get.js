@@ -1,7 +1,7 @@
 // import initDatabase from './database.js';
 const initDatabase = require('../../database');
 
-async function getCapaciteyId( id ){
+async function getCapaciteById( id ){
     const connectedDb = await initDatabase();
     const data = await connectedDb.collection("Capacites").findOne({ _id: id });
     return data
@@ -15,4 +15,4 @@ async function getRandomCapacite(){
     return randomPokemon
 }
 
-module.exports = {getCapaciteyId, getRandomCapacite};
+module.exports = {getCapaciteById, getRandomCapacite};
