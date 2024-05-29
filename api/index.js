@@ -8,6 +8,7 @@ const cors = require('cors');
 const initDatabase = require('../database');
 const {getPokemonById, getRandomPokemon} = require('../controler/Pokemon/get');
 const {getCapaciteById, getRandomCapacite} = require('../controler/Capacites/get');
+const {getTypeById, getRandomType} = require('../controler/Types/get');
 
 const app = express()
 
@@ -38,6 +39,22 @@ app.get('/attackById/:id', async function (req, res) {
     let Capacite = await getCapaciteById(id);
     res.send(Capacite)
 })
+
+app.get('/typeById/:id', async function (req, res) {
+    let id = req.params.id
+    console.log(id)
+    let Type = await getTypeById(id);
+    res.send(Type)
+})
+
+
+
+
+
+
+
+
+
 
 
 app.get('/', function (req, res) {
