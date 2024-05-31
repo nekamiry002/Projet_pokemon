@@ -1,0 +1,7 @@
+Cette partie est le back-end
+
+Ici se situe des routes pour communiquer avec la base de données MongoDB
+
+/aléatoire permet d'avoir un pokemon aléatoire
+/attackById/:id permet d'avoir une attaque avec son id
+/typeById/:id permet d'avoir un type avec son id
